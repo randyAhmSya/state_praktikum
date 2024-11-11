@@ -8,6 +8,7 @@ pada task
 pada code plan
 ![alt text](image-4.png)
 code data layer
+![alt text](image-5.png)
 pada salah satu praktikum ini memperlihatkan cara membuat aplikasi daftar tugas (todo list) dengan menggunakan Flutter. Aplikasi ini dibuat untuk membantu pengguna mengelola dan melacak tugas-tugas mereka dengan mudah.
 2. 
 Di dalam aplikasi ini terdapat dua komponen utama yaitu:
