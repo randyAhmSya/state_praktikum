@@ -11,28 +11,21 @@ code data layer
 ![alt text](image-5.png)
 pada salah satu praktikum ini memperlihatkan cara membuat aplikasi daftar tugas (todo list) dengan menggunakan Flutter. Aplikasi ini dibuat untuk membantu pengguna mengelola dan melacak tugas-tugas mereka dengan mudah.
 2. 
-Di dalam aplikasi ini terdapat dua komponen utama yaitu:
-a. Setiap tugas individual memiliki:
-Deskripsi yang menjelaskan apa yang perlu dilakukan
-Tanda centang yang menunjukkan apakah tugas sudah selesai atau belum
-b. Kumpulan tugas diorganisir dalam sebuah Plan yang terdiri dari:
-Nama untuk mengidentifikasi kelompok tugas tersebut
-Daftar lengkap tugas-tugas yang termasuk di dalamnya
+task = mem Buat kelas Task dengan atribut description (tipe String) dan complete (tipe Boolean). Ini berfungsi sebagai model data untuk setiap tugas di aplikasi.
+plan = Selanjutnya, buat file plan.dart di dalam folder models. Kelas Plan akan memiliki atribut name (nama daftar tugas) dan tasks (daftar Task yang terhubung).
+data_layer Untuk memudahkan pengelolaan, buat file data_layer.dart yang menggabungkan kedua model (Task dan Plan) agar bisa diimpor lebih ringkas.
+planscreen = ebagai tampilan utama untuk daftar tugas. Gunakan template StatefulWidget untuk menangani state di aplikasi. Gantilah teks Namaku dengan nama panggilan .
 
 3.
-Untuk memudahkan pengguna, aplikasi ini dilengkapi beberapa fitur interaktif:
-a. Tombol tambah (+) yang terletak di pojok layar untuk menambahkan tugas baru
-b. Kotak centang di sebelah kiri setiap tugas untuk menandai penyelesaian
-c. Kolom teks yang bisa diedit langsung untuk mengubah deskripsi tugas
+Variabel plan di langkah 6 sangat penting karena ia berperan sebagai data inti yang menyimpan seluruh informasi tugas yang akan dikelola oleh aplikasi. plan ini menjadi tempat menyimpan daftar tugas yang bisa ditambah, diubah, atau ditandai selesai oleh pengguna.
+aplikasi tidak akan punya cara untuk mengelola data tugas secara terpusat
+Lalu, mengapa plan perlu dijadikan konstanta (const) di awal? Alasannya adalah untuk menjaga agar nilai awal plan tidak mudah berubah secara tidak sengaja di luar kendali aplikasi.
 4.
-Aplikasi ini menggunakan sistem pengelolaan data yang cerdas:
-a. Setiap kali ada perubahan, sistem membuat salinan baru dari keseluruhan data
-b. Pendekatan ini menjamin keamanan data dan membuat perilaku aplikasi lebih mudah diprediksi
-c. Tampilan aplikasi akan segera diperbarui secara otomatis ketika ada perubahan data
-
+![alt text](image-6.png)
+Pada Langkah 9, kita telah membuat tampilan ListTile untuk setiap tugas.
+Setiap tugas ditampilkan dengan komponen berikut:
+Checkbox: Mengizinkan pengguna untuk menandai tugas sebagai selesai. Ketika checkbox dicentang, status tugas akan diperbarui di data plan, dan tampilan diperbarui secara otomatis.
+Input Text: Setiap tugas memiliki kolom teks untuk deskripsi yang bisa diedit langsung. Perubahan pada kolom teks akan disimpan ke data plan, dan tampilan akan berubah sesuai deskripsi terbaru.
+Dengan kata lain, tampilan ini memungkinkan pengguna untuk berinteraksi dengan daftar tugas dengan mudah, baik untuk menandai tugas selesai maupun untuk mengedit deskripsi tugas.
 5.
-Kenyamanan pengguna menjadi prioritas dengan adanya fitur:
-a. Papan ketik yang otomatis tersembunyi ketika layar di-scroll
-b. Penyesuaian khusus untuk pengalaman yang optimal di:
-Perangkat iOS
-Perangkat Android
+Method initState() digunakan untuk menginisialisasi ScrollController saat widget pertama kali dibuat. dispose() digunakan untuk membersihkan ScrollController ketika widget sudah tidak diperlukan lagi, menjaga efisiensi memori.
