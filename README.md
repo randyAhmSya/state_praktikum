@@ -36,9 +36,3 @@ a. Papan ketik yang otomatis tersembunyi ketika layar di-scroll
 b. Penyesuaian khusus untuk pengalaman yang optimal di:
 Perangkat iOS
 Perangkat Android
-
-6.
-Metode pengembangan ini memberikan beberapa keuntungan penting:
-a. Struktur aplikasi yang rapi berkat pemisahan antara data dan tampilan
-b. Kemudahan dalam pengembangan fitur baru di masa mendatang
-c. Proses perawatan dan perbaikan yang lebih efisien
